@@ -12,15 +12,9 @@ int main()
 {
 	Integer a(4), b(4);
 	
-	Integer sum = a + b;
+	Integer sum = (Integer)5 + b;
 
-	sum++;
-
-	a == b ? std::cout << "True\n" : std::cout << "False\n";
-
-
-
-	std::cout << sum.GetValue();
+	std::cout << sum.GetValue() << std::endl;
 	
 	return 0;
 }
