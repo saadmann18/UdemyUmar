@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\UdemyUmar - local - new\FunctionOverloading\FunctionOverloading\func.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="func.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\UdemyUmar - local - new\FunctionOverloading\FunctionOverloading\Main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\UdemyUmar - local - new\FunctionOverloading\FunctionOverloading\func.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="func.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
