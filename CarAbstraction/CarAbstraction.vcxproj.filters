@@ -15,15 +15,15 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\UdemyUmar - local - new\CarAbstraction\CarAbstraction\Car.cpp">
+    <ClCompile Include="Car.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\UdemyUmar - local - new\CarAbstraction\CarAbstraction\Main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\UdemyUmar - local - new\CarAbstraction\CarAbstraction\Car.h">
+    <ClInclude Include="Car.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
