@@ -15,16 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\UdemyUmar - local - new\Debugging Basics\Debugging Basics\factDef.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <ClCompile Include="factDec.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\UdemyUmar - local - new\Debugging Basics\Debugging Basics\main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\UdemyUmar - local - new\Debugging Basics\Debugging Basics\factDec.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ClInclude Include="factDef.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
