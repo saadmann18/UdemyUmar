@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\UdemyUmar - local - new\LRvalues\Main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\UdemyUmar - local - new\LRvalues\Move Semantics.png">
+    <Image Include="Move Semantics.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
