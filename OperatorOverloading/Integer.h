@@ -30,6 +30,9 @@ public:
 
 	bool operator ==(const Integer& obj) const;
 
+	//function call operator to print contents of the object
+	void operator ()();
+
 	~Integer(); 
 
 };
