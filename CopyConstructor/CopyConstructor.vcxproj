@@ -18,6 +18,14 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Integer.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Main5.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Integer.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,14 +134,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\UdemyUmar - local - new\CopyConstructor\CopyConstructor\Integer.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\UdemyUmar - local - new\CopyConstructor\CopyConstructor\Integer.cpp" />
-    <ClCompile Include="..\..\UdemyUmar - local - new\CopyConstructor\CopyConstructor\Main.cpp" />
-    <ClCompile Include="..\..\UdemyUmar - local - new\CopyConstructor\CopyConstructor\Main5.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
