@@ -17,7 +17,7 @@ std::istream& operator >>(std::istream& input, Integer& a)
 {
 	int x;
 	input >> x;
-	a.SetValue(x);
+	*a.m_pInt = x;
 	return input;
 }
 

@@ -33,6 +33,8 @@ public:
 	//function call operator to print contents of the object
 	void operator ()();
 
+	friend std::istream& operator >>(std::istream& input, Integer& a)
+
 	~Integer(); 
 
 };
