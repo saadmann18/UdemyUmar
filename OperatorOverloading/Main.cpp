@@ -1,18 +1,19 @@
 #include "Integer.h"
 #include <iostream>
 
-Integer Add(const Integer& a, const Integer& b) //return by value.
+Integer operator +(int x, const Integer& y)
 {
 	Integer temp;
-	temp.SetValue(a.GetValue() + b.GetValue());
-	return temp; // copy constructor is called due to this return temp object by value!
-}//in some cases, this temporary object may not get created. This is due to the compiler performing copy or move elision.
+	temp.SetValue(x + y.GetValue());
+	return temp;
+}
+
 
 int main()
 {
 	Integer a(4), b(4);
 	
-	Integer sum = (Integer)5 + b;
+	Integer sum = 5 + b;
 
 	std::cout << sum.GetValue() << std::endl;
 	
