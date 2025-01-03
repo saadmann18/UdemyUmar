@@ -15,18 +15,18 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\UdemyUmar - local - new\DynamicMemoryAllocation\DynamicMemoryAllocation\func.cpp">
+    <ClCompile Include="func.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\UdemyUmar - local - new\DynamicMemoryAllocation\DynamicMemoryAllocation\Main.c">
+    <ClCompile Include="Main.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\UdemyUmar - local - new\DynamicMemoryAllocation\DynamicMemoryAllocation\Main.cpp">
+    <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\UdemyUmar - local - new\DynamicMemoryAllocation\DynamicMemoryAllocation\func.h">
+    <ClInclude Include="func.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
