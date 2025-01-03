@@ -1,5 +1,5 @@
-#include "Integer.h"
 #include <iostream>
+#include "Integer.h"
 
 Integer operator +(int x, const Integer& y)
 {

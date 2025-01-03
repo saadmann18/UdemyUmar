@@ -1,5 +1,5 @@
- #include "Integer.h"
 #include <iostream>
+ #include "Integer.h"
 Integer::Integer()
 {
 	std::cout << "Integer()" << std::endl;
