@@ -17,6 +17,8 @@ public:
 
 	//copy assignment
 	Integer& operator=(const Integer& obj);
+
+	//Move assignment
 	Integer& operator=( Integer&& obj);
 
 	int GetValue() const;
