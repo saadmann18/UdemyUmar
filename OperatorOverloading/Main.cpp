@@ -8,6 +8,11 @@ Integer operator +(int x, const Integer& y)
 	return temp;
 }
 
+std::ostream & operator <<(std::ostream& out, const Integer& a)
+{
+	out << a.GetValue();
+	return out;
+}
 
 int main()
 {
@@ -16,8 +21,10 @@ int main()
 	Integer sum1 = b + 5;
 	Integer sum2 = 5 + b; //Global function overload needed.
 
-	std::cout << sum1.GetValue() << std::endl;
-	std::cout << sum2.GetValue() << std::endl;
+	std::cout << sum1 << std::endl;
+	std::cout << sum2 << std::endl;
+
+
 	
 	return 0;
 }
