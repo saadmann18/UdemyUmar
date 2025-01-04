@@ -46,7 +46,7 @@ public:
 
 class Printer
 {
-	//Printer class wants to access the private members	of Integer, declaring friend of Integer.
+	// Printer class wants to access the private members	of Integer, declaring friend of Integer.
 	// Discouraged because it allows to access the internal data of the class directly.
 	// Can be a source of bugs.
 	// friend classes and friend functions should be used only as a last resort to solve problems.

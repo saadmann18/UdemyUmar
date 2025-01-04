@@ -1,23 +1,27 @@
 #include <iostream>
 #include "Integer.h"
+
+//Default constructor
 Integer::Integer()
 {
 	std::cout << "Integer()" << std::endl;
 	m_pInt = new int(0);
 }
+//Parametrized constructor
 Integer::Integer(int value)
 {
 	std::cout << "Integer(int)" << std::endl;
 	m_pInt = new int(value);
 }
 
-// deep copy constructor
+//copy constructor for deep copy
 Integer::Integer(const Integer& obj)
 {
 	std::cout << "Integer(const Integer &)" << std::endl;
 	m_pInt = new int(*obj.m_pInt);
 }
 
+//Move constructor for shallow copy
 Integer::Integer(Integer&& obj)
 {
 	std::cout << "Integer(Integer &&)" << std::endl;
@@ -25,6 +29,7 @@ Integer::Integer(Integer&& obj)
 	obj.m_pInt = nullptr;
 }
 
+//copy assignment
 Integer& Integer::operator=(const Integer& obj)
 {
 	std::cout << "Operator=(const Integer& obj)" << std::endl;
@@ -37,6 +42,7 @@ Integer& Integer::operator=(const Integer& obj)
 	return *this;
 }
 
+//Move assignment
 Integer& Integer::operator=(Integer&& obj)
 {
 	std::cout << "Operator=(Integer&& obj)" << std::endl;
@@ -93,11 +99,13 @@ bool Integer::operator==(const Integer& obj) const
 	return *m_pInt == *obj.m_pInt;
 }
 
+//function call operator to print contents of the object
 void Integer::operator()() 
 {
 	std::cout << *m_pInt << std::endl;
 }
 
+//Userdefined to primitive type conversion
 Integer::operator int()
 {
 	return *m_pInt;
