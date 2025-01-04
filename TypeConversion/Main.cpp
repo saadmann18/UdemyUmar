@@ -1,21 +1,27 @@
 #include <iostream>
 #include "Integer.h"
 
-void Print(const Integer& a)
+class Product
 {
-
-}
+	Integer m_Id;
+public:
+	Product(const Integer& id) :m_Id(id)
+	{
+		std::cout << "Product Integer &" << std::endl;
+	}
+	~Product()
+	{
+		std::cout << "~";
+	}
+	const Integer& GetInteger()const
+	{
+		return m_Id;
+	}
+};
 
 int main()
 {
-	Integer a1{ 5 };
-	//Initializaiton
-	Integer a2 = 5;
-	Print(5);
-	//assignment
-	a1 = 7;
-
-
-	int x = a1;
+	Product p{ 5 };
+	Integer id = p.GetInteger(); 
 	return 0;
 }
