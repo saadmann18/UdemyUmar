@@ -21,20 +21,20 @@ public:
 	}
 };
 
-void Process(std::unique_ptr<Integer> ptr)
+void Process(std::shared_ptr<Integer> ptr)
 {
 	std::cout << ptr->GetValue() << std::endl;
 }
 
 void CreateInteger()
 {
-	std::unique_ptr<Integer> p(new Integer);
+	std::shared_ptr<Integer> p(new Integer);
 	p->SetValue(3);
 	(*p).SetValue(4);
 
-	Process(std::move(p));
+	Process(p);
 
-	//std::cout << p->GetValue() << std::endl;
+	std::cout << p->GetValue() << std::endl;
 }
 
 
