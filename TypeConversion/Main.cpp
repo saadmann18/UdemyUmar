@@ -11,7 +11,7 @@ public:
 	}
 	~Product()
 	{
-		std::cout << "~";
+		std::cout << "~Product()";
 	}
 	const Integer& GetInteger()const
 	{
@@ -26,6 +26,14 @@ public:
 int main()
 {
 	Product p{ 5 };
-	Integer id = p; 
+	//Integer id = p; 
+	Integer id{ 5 };
+
+	if (id == p.GetInteger())
+		std::cout << "Id and Product matches 1" << std::endl;
+	if (id == p)
+		std::cout << "Id and Product matches 2" << std::endl;
+
+
 	return 0;
 }
