@@ -98,6 +98,11 @@ void Integer::operator()()
 	std::cout << *m_pInt << std::endl;
 }
 
+Integer::operator int()
+{
+	return *m_pInt;
+}
+
 Integer::~Integer()
 {
 	std::cout << "~Integer()" << std::endl;

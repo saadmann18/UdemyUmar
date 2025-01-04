@@ -33,6 +33,9 @@ public:
 	//function call operator to print contents of the object
 	void operator ()();
 
+	//Userdefined to primitive type conversion
+	operator int();
+
 	friend std::istream& operator >>(std::istream& input, Integer& a);
 	friend class Printer;
 
