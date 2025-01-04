@@ -46,10 +46,13 @@ int main()
 	std::shared_ptr<Employee> e3{ new Employee{} };
 	e3->SetProject(prj);
 
+	std::cout << "Reference count: " << prj.use_count() << '\n';
+	
 	ShowInfo(e1);
 	ShowInfo(e2);
 
 	prj->ShowProjectDetails();
+
 
 
 }
