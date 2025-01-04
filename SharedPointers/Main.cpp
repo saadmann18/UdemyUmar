@@ -16,19 +16,19 @@ public:
 
 class Employee
 {
-	std::unique_ptr<Project> m_pProject{};
+	std::shared_ptr<Project> m_pProject{};
 public:
-	void SetProject(std::unique_ptr<Project> &prj)
+	void SetProject(const std::shared_ptr<Project> &prj)
 	{
-		m_pProject = std::move(prj);
+		m_pProject = prj;
 	}
-	const std::unique_ptr<Project>& GetProject() const
+	const std::shared_ptr<Project>& GetProject() const
 	{
 		return m_pProject;
 	}
 };
 
-void ShowInfo(const std::unique_ptr<Employee> & emp)
+void ShowInfo(const std::shared_ptr<Employee> & emp)
 {
 	std::cout << "Employee Project Details: ";
 	emp->GetProject()->ShowProjectDetails();
@@ -36,14 +36,14 @@ void ShowInfo(const std::unique_ptr<Employee> & emp)
 
 int main() 
 {
-	std::unique_ptr<Project> prj{ new Project{} };
+	std::shared_ptr<Project> prj{ new Project{} };
 	prj->SetName("Video Decoder");
 
-	std::unique_ptr<Employee> e1{ new Employee{} };
+	std::shared_ptr<Employee> e1{ new Employee{} };
 	e1->SetProject(prj);
-	std::unique_ptr<Employee> e2{ new Employee{} };
+	std::shared_ptr<Employee> e2{ new Employee{} };
 	e2->SetProject(prj);
-	std::unique_ptr<Employee> e3{ new Employee{} };
+	std::shared_ptr<Employee> e3{ new Employee{} };
 	e3->SetProject(prj);
 
 	ShowInfo(e1);
