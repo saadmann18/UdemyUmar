@@ -16,19 +16,19 @@ public:
 
 class Employee
 {
-	Project* m_pProject{};
+	std::unique_ptr<Project> m_pProject{};
 public:
-	void SetProject(Project* prj)
+	void SetProject(std::unique_ptr<Project> &prj)
 	{
-		m_pProject = prj;
+		m_pProject = std::move(prj);
 	}
-	const Project* GetProject() const
+	const std::unique_ptr<Project>& GetProject() const
 	{
 		return m_pProject;
 	}
 };
 
-void ShowInfo(Employee* emp)
+void ShowInfo(const std::unique_ptr<Employee> & emp)
 {
 	std::cout << "Employee Project Details: ";
 	emp->GetProject()->ShowProjectDetails();
@@ -36,14 +36,14 @@ void ShowInfo(Employee* emp)
 
 int main() 
 {
-	Project* prj = new Project{};
+	std::unique_ptr<Project> prj{ new Project{} };
 	prj->SetName("Video Decoder");
 
-	Employee* e1 = new Employee{};
+	std::unique_ptr<Employee> e1{ new Employee{} };
 	e1->SetProject(prj);
-	Employee* e2 = new Employee{};
+	std::unique_ptr<Employee> e2{ new Employee{} };
 	e2->SetProject(prj);
-	Employee* e3 = new Employee{};
+	std::unique_ptr<Employee> e3{ new Employee{} };
 	e3->SetProject(prj);
 
 	ShowInfo(e1);
@@ -51,9 +51,5 @@ int main()
 
 	prj->ShowProjectDetails();
 
-	delete prj;
-	delete e1;
-	delete e2;
-	delete e3;
 
 }
