@@ -43,6 +43,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InitializationVSassignment"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MemoryManagement", "MemoryManagement\MemoryManagement.vcxproj", "{24A2312E-C60B-4E87-B757-28982AD0A114}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SharedPointers", "SharedPointers\SharedPointers.vcxproj", "{F97CF424-571C-4DF1-9450-852C9DD3FC2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -211,6 +213,14 @@ Global
 		{24A2312E-C60B-4E87-B757-28982AD0A114}.Release|x64.Build.0 = Release|x64
 		{24A2312E-C60B-4E87-B757-28982AD0A114}.Release|x86.ActiveCfg = Release|Win32
 		{24A2312E-C60B-4E87-B757-28982AD0A114}.Release|x86.Build.0 = Release|Win32
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Debug|x64.ActiveCfg = Debug|x64
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Debug|x64.Build.0 = Debug|x64
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Debug|x86.ActiveCfg = Debug|Win32
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Debug|x86.Build.0 = Debug|Win32
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Release|x64.ActiveCfg = Release|x64
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Release|x64.Build.0 = Release|x64
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Release|x86.ActiveCfg = Release|Win32
+		{F97CF424-571C-4DF1-9450-852C9DD3FC2F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
