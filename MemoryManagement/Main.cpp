@@ -13,7 +13,7 @@ Integer* GetPointer(int value) { //factory function to create Integer type point
 	return p;
 }
 
-void Store(std::unique_ptr<Integer> p) {
+void Store(std::unique_ptr<Integer> &p) {
 	std::cout << "Storing data into file: " << p->GetValue() << std::endl;
 }
 
@@ -27,7 +27,7 @@ void Operate(int value) {
 	p.reset(new Integer{});
 	*p = __LINE__;
 	Display(p.get());
-	Store(std::move(p));
+	Store(p);
 }
 
 int main() {
