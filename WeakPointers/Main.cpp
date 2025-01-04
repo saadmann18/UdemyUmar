@@ -2,14 +2,15 @@
 
 class Printer
 {
-	int* m_pValue;
+	std::shared_ptr <int> m_pValue{};
 public:
-	void SetValue(int* p)
+	void SetValue(std::shared_ptr<int> p)
 	{
 		m_pValue = p;
 	}
 	void Print()
 	{
+		std::cout << "Ref count: " << m_pValue.use_count() << std::endl;
 		std::cout << "Value is: " << *m_pValue << std::endl;
 	}
 };
@@ -19,13 +20,11 @@ int main()
 	Printer prn;
 	int num{};
 	std::cin >> num;
-	int* p = new int{ num };
+	std::shared_ptr<int> p{ new int{ num } };
 	prn.SetValue(p);
 	if (*p > 10)
 	{
-		delete p;
 		p = nullptr;
 	}
 	prn.Print();
-	delete p;
 }
