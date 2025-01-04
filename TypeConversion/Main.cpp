@@ -17,11 +17,15 @@ public:
 	{
 		return m_Id;
 	}
+	operator Integer()
+	{
+		return m_Id;
+	}
 };
 
 int main()
 {
 	Product p{ 5 };
-	Integer id = p.GetInteger(); 
+	Integer id = p; 
 	return 0;
 }
