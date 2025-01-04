@@ -7,7 +7,7 @@ public:
 	Integer();
 
 	//Parametrized constructor
-	Integer(int value);
+	explicit Integer(int value);
 
 	//copy constructor for deep copy
 	Integer(const Integer &obj);
