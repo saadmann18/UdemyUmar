@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Integer.h"
+#include <memory>
 
 class IntPtr
 {
@@ -22,10 +23,10 @@ public:
 
 void CreateInteger()
 {
-	IntPtr p = new Integer;
+	std::unique_ptr<Integer> p(new Integer);
 	p->SetValue(3);
 	(*p).SetValue(4);
-	//std::cout << p->GetValue() << std::endl;
+	std::cout << p->GetValue() << std::endl;
 }
 
 
