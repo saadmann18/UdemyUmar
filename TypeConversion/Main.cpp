@@ -15,5 +15,7 @@ int main()
 	//assignment
 	a1 = 7;
 
+
+	int x = a1;
 	return 0;
 }
