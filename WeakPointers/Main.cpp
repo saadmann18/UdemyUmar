@@ -2,16 +2,21 @@
 
 class Printer
 {
-	std::shared_ptr <int> m_pValue{};
+	std::weak_ptr <int> m_pValue{};
 public:
-	void SetValue(std::shared_ptr<int> p)
+	void SetValue(std::weak_ptr<int> p)
 	{
 		m_pValue = p;
 	}
 	void Print()
 	{
-		std::cout << "Ref count: " << m_pValue.use_count() << std::endl;
-		std::cout << "Value is: " << *m_pValue << std::endl;
+		if (m_pValue.expired()) {
+			std::cout << "Resource is no longer available" << std::endl;
+			return;
+		}
+		auto sp = m_pValue.lock(); //reference count will be incremented by 1.
+		std::cout << "Value is: " << *sp << std::endl;
+		std::cout << "Ref count: " << sp.use_count() << std::endl;
 	}
 };
 
