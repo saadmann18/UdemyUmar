@@ -1,5 +1,5 @@
 #include<iostream>
-enum class Color { RED, GREEN, BLUE };
+enum class Color : long{ RED, GREEN, BLUE };
 
 void FillColor(Color color)
 {
@@ -18,7 +18,7 @@ void FillColor(Color color)
 	}
 }
 //enum TrafficLight{RED, GREEN, BLUE}; cannot be done. needs scoped enum
-enum class TrafficLight { RED, GREEN, BLUE };
+enum class TrafficLight : char{ RED, GREEN, BLUE };
 int main() {
 
 	Color c = Color::RED;
