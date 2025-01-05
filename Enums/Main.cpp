@@ -1,19 +1,32 @@
-#define RED 0
-const int GREEN = 1;
-void FillColor(int color)
+#include<iostream>
+enum class Color { RED, GREEN, BLUE };
+
+void FillColor(Color color)
 {
-	if(color == 0){
+	//Fill background with some color
+	if(color == Color::RED){
 		//Paint with red color
+		std::cout << "RED" << std::endl;
 	}
-	else if (color == 1){
+	else if (color == Color::GREEN){
 		//paint with green color
+		std::cout << "GREEN" << std::endl;
+	}
+	else if (color == Color::BLUE) {
+		//paint with green color
+		std::cout << "BLUE" << std::endl;
 	}
 }
-
+//enum TrafficLight{RED, GREEN, BLUE}; cannot be done. needs scoped enum
+enum class TrafficLight { RED, GREEN, BLUE };
 int main() {
-	FillColor(RED);
-	FillColor(GREEN);
-	FillColor(6);
 
+	Color c = Color::RED;
+	FillColor(c);
+	FillColor(Color::GREEN);
+	FillColor(Color::BLUE);
+	//FillColor(6); // no implicit conversion
+	FillColor(static_cast<Color>(2));
+	int x = static_cast<int>(Color::RED);
 	return 0;
 }
