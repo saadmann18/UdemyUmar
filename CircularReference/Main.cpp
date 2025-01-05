@@ -19,7 +19,7 @@ public:
 class Employee
 {
 public:
-	std::shared_ptr<Project>m_prj;
+	std::weak_ptr<Project>m_prj;
 	Employee()
 	{
 		std::cout << "Employee()" << std::endl;
