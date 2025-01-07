@@ -2,9 +2,6 @@
 
 #include <iostream>
 
-Checking::Checking(const std::string& name, float balance): Account(name, balance)
-{
-}
 
 Checking::~Checking()
 {
