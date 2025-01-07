@@ -22,5 +22,8 @@ int main() {
 	Distance dist{ 32.0_mi };
 	Distance d2{ 7234.0_meters };
 	std::cout << d2.GetKm() << std::endl;
+
+	int x = 5;
+
 	return 0;
 }
