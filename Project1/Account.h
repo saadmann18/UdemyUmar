@@ -3,9 +3,10 @@
 class Account
 {
 	std::string m_Name;
-	float m_Balance;
 	int m_AccNo;
 	static int s_ANGenerator;
+protected:
+	float m_Balance;
 public:
 	Account(const std::string &name, float balance);
 	~Account();
