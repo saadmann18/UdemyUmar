@@ -4,7 +4,7 @@ class Account
 {
 	std::string m_Name;
 	int m_AccNo;
-	static int s_ANGenerator;
+	static int s_ANGenerator; // keeps the count globally
 protected:
 	float m_Balance;
 public:
@@ -14,10 +14,10 @@ public:
 	float GetBalance()const;
 	int GetAccountNo()const;
 
-	void AccumulateInterest();
-	void Withdraw(float amount);
+	virtual void AccumulateInterest();
+	virtual void Withdraw(float amount);
 	void Diposit(float amount);
-	float GetInterestRate()const;
+	virtual float GetInterestRate()const;
 
 };
 

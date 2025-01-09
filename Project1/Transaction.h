@@ -1,3 +1,3 @@
 #pragma once
-#include "Checking.h"
-void Transact(Checking* pAccount);
+#include "Account.h"
+void Transact(Account* pAccount);
