@@ -6,8 +6,8 @@
 
 int main()
 {
-	Savings acc("Saad", 100, 0.05f);
-	Transact(&acc);
+	Account *acc = new Savings("Saad", 100, 0.05f);
 
+	delete acc;
 	return 0;
 }
