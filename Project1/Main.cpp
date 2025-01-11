@@ -7,14 +7,22 @@
 
 int main()
 {
-	Savings ch("Saad", 100, 0.05f);
+	Checking ch("Saad", 100, 0.05f);
 	//Transact(&ch);
 	Account* p = &ch;
 
 	int i{};
-	float f{};
+	float f{}; 
 	const std::type_info& ti = typeid(*p);
 	std::cout << ti.name() << std::endl;
-	 
+
+	if (ti == typeid(Savings))
+	{
+		std::cout << "Pointing to a Savings object" << std::endl;
+	}
+	else
+	{
+		std::cout << "not Pointing to a Savings object" << std::endl;
+	}
 	return 0;
 }
