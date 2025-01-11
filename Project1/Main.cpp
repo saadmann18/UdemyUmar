@@ -6,8 +6,7 @@
 
 int main()
 {
-	Account *acc = new Savings("Saad", 100, 0.05f);
-
-	delete acc;
+	Checking ch("Saad", 100, 50);
+	std::cout << ch.GetMinimumBalance();
 	return 0;
 }
