@@ -1,5 +1,6 @@
 #include <iostream>
 #include <memory>
+#include <vector>
 
 class Test {
 public:
@@ -15,16 +16,14 @@ int ProcessRecords(int count) {
 	std::unique_ptr<Test> t(new Test);
 	if (count < 10)
 		throw std::out_of_range("Count should be greter than 10");
-	int* p = new int[count];
-	int* pArray = (int*)malloc(count * sizeof(int));
-	if (pArray == nullptr) {
-		throw std::runtime_error("Failed to allocate memory");
-	}
+	std::vector<int> p;
+	p.reserve(count);
+	std::vector<int> pArray;
+	pArray.reserve(count);
+	
 	for (int i = 0; i < count; ++i) {
-		pArray[i] = i;
+		pArray.push_back(i);
 	}
-	free(pArray);
-	delete[] p;
 }
 
 int main() {
