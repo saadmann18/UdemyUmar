@@ -1,4 +1,6 @@
 #include <iostream>
+#include <memory>
+#include <vector>
 class A {
 public:
 	A() {
@@ -18,28 +20,30 @@ public:
 	}
 };
 class Test {
-	A* pA{};
+	std::unique_ptr<A>pA{};
 	B b{};
-	int* pInt{};
-	char* pStr{};
-	int* pArr{};
+	std::unique_ptr<int>pInt{};
+	std::string pStr{};
+	std::vector<int> pArr{};
 public:
 	Test() {
 		std::cout << "Test(): Acquire resources" << std::endl;
-		pA = new A;
-		pInt = new int;
+		pA.reset(new A);
 		throw std::runtime_error("Failed to initialize");
+		/*pA = new A;
+		pInt = new int;
 		pStr = new char[1000];
-		pArr = new int[1000];
+		pArr = new int[1000];*/
 	}
 	~Test() {
 		std::cout << "~Test(): Release resources" << std::endl;
-		delete pA;
+		/*delete pA;
 		delete pInt;
 		delete[] pStr;
-		delete[]pArr;
+		delete[]pArr;*/
 	}
 };
+
 
 int main() {
 	try {
