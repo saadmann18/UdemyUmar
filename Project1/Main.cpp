@@ -7,7 +7,12 @@
 
 int main()
 {
-	Savings ch("Saad", 100, 0.05f);
-	Transact(&ch);
+	Checking ch("Saad", 100, 50);
+	try {
+		Transact(ch);
+	}
+	catch (std::exception& ex) {
+		std::cout << "Exception: " << ex.what() << '\n';
+	}
 	return 0;
 }
