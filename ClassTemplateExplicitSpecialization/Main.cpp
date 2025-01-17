@@ -29,6 +29,15 @@ public:
 };
 
 template<>
+void PrettyPrint<std::vector<int>>::Print() {
+	std::cout << "{";
+	for (const auto& x : *m_pData) {
+		std::cout << x;
+	}
+	std::cout << "}" << std::endl;
+}
+
+/*template<>
 class PrettyPrint<std::vector<int>> {
 	std::vector<int>* m_pData;
 public:
@@ -43,7 +52,9 @@ public:
 	std::vector<int>* GetData() {
 		return m_pData;
 	}
-};
+};*/
+
+
 int main() {
 	/*int data = 5;
 	float f = 8.5;
