@@ -15,10 +15,15 @@ public:
 	}
 };
 
+template<typename T1, typename T2>
+Employee* Create(T1&& a, T2&& b) {
+	return new Employee(std::forward<T1>(a), std::forward<T2>(b)); //perfect forwarding to invoke move constructor.
+}
+
 int main() {
 	//Employee emp1{ "Saad", Integer{100} };
 	/*std::string name = "Saad";
 	Employee emp2{ name, 100 };*/
-	Integer val{ 100 };
-	Employee emp3{ std::string{"Saad"}, val };
+	//Integer val{ 100 };
+	Employee emp3{ std::string{"Saad"}, Integer{100} };
 }
