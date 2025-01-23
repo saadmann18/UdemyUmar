@@ -1,4 +1,5 @@
 #pragma once
+#include<iostream>
 class Integer
 {
 	int* m_pInt;
@@ -17,6 +18,8 @@ public:
 
 	//copy assignment
 	Integer& operator=(const Integer& obj);
+
+	//Move assignment
 	Integer& operator=( Integer&& obj);
 
 	int GetValue() const;
@@ -28,6 +31,24 @@ public:
 
 	bool operator ==(const Integer& obj) const;
 
+	//function call operator to print contents of the object
+	void operator ()();
+
+	//Userdefined to primitive type conversion
+	operator int();
+
+	friend std::istream& operator >>(std::istream& input, Integer& a);
+	friend class Printer;
+
 	~Integer(); 
 
 };
+
+class Printer
+{
+	// Printer class wants to access the private members	of Integer, declaring friend of Integer.
+	// Discouraged because it allows to access the internal data of the class directly.
+	// Can be a source of bugs.
+	// friend classes and friend functions should be used only as a last resort to solve problems.
+};
+
