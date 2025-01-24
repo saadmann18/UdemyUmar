@@ -27,7 +27,7 @@ public:
 		return m_pData;
 	}
 };
-
+//Specialize vectors with function specialization
 template<>
 void PrettyPrint<std::vector<int>>::Print() {
 	std::cout << "{";
