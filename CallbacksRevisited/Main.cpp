@@ -5,9 +5,9 @@ void Sort(T(&arr)[size]) { //Non-type template argument. Parameter passed as ref
 	for (int i = 0; i < size - 1; ++i) {
 		for (int j = 0; j < size - 1; ++j) {
 			if (arr[j] > arr[j + 1]) {
-				T temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
+				T temp = std::move(arr[j]); // Move semantics is used to avoid creating multiple copies for user-defined datatypes.
+				arr[j] = std::move(arr[j + 1]);
+				arr[j + 1] = std::move(temp);
 			}
 		}
 	}
