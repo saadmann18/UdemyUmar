@@ -4,17 +4,25 @@
 int Square(int x) {
 	return x * x;
 }
-int* Alloc(size_t bytes);
+int Add(int x, int y) {
+	return x + y;
+}
+
+struct  Max{
+	int operator()(int x, int y)const {
+		return x > y ? x : y;
+	}
+};
 
 
 
 
 int main() {
-	std::function<int(int)> f1 = Square;
-	//std::function<int* (size_t)> f2 = Alloc;
-	//std::function<bool(int)> f3 = [](int x) {return x % 2 == 0; };
-	f1(3);
-	std::cout << f1(3) << std::endl;
-	//f2(1024);
-	//f3(3);
+	try {
+		std::function<int(int)> f1 = Square;
+		std::cout << f1(3) << std::endl;
+	}
+	catch (const std::exception& ex) {
+		std::cout << "Exception -> " << ex.what() << '\n';
+	}
 }
