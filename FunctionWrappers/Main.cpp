@@ -15,12 +15,20 @@ struct  Max{
 };
 
 
-
-
 int main() {
 	try {
-		std::function<int(int)> f1 = Square;
-		std::cout << f1(3) << std::endl;
+		std::function<int(int)> f1;
+		if (f1)
+			std::cout << f1(3) << std::endl;
+		else{
+			std::cout << "No target to invoke!\n";
+		}
+			
+
+		Max m{};
+		std::function<int(int, int)> f2 = m;
+		std::cout << f2(3, 5) << std::endl;
+
 	}
 	catch (const std::exception& ex) {
 		std::cout << "Exception -> " << ex.what() << '\n';
