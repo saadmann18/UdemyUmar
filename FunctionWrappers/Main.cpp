@@ -7,13 +7,19 @@ int Square(int x) {
 int Add(int x, int y) {
 	return x + y;
 }
-
+int Subtract(int x, int y) {
+	return x - y;
+}
 struct  Max{
 	int operator()(int x, int y)const {
 		return x > y ? x : y;
 	}
 };
 
+//Usage
+int Operation(int x, int y, std::function<int(int, int)> callback) {
+	return callback(x, y);
+}
 
 int main() {
 	try {
@@ -34,6 +40,12 @@ int main() {
 		std::function<bool(int)> f3 = [](int x) {return x % 2 == 0; };
 		std::cout << "IsEven?" << f3(4) << '\n';
 
+		//Usage
+		std::function<int(int, int)> f4 = Add;
+		std::cout << Operation(3, 5, f4) << '\n';
+		f4 = Subtract;
+		std::cout << Operation(3, 5, f4) << '\n';
+		std::cout << Operation(3, 5, [](int x, int y) {return x * y; }) << '\n';
 	}
 	catch (const std::exception& ex) {
 		std::cout << "Exception -> " << ex.what() << '\n';
