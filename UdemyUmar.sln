@@ -75,6 +75,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClassTemplates", "ClassTemp
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CallbacksRevisited", "CallbacksRevisited\CallbacksRevisited.vcxproj", "{6D7CA1FF-D4D7-4BA0-B9D7-E4CECB40759A}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LambdaExpressions", "LambdaExpressions\LambdaExpressions.vcxproj", "{AF2B042C-40A6-4E69-BC54-2A1585080478}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -371,6 +373,14 @@ Global
 		{6D7CA1FF-D4D7-4BA0-B9D7-E4CECB40759A}.Release|x64.Build.0 = Release|x64
 		{6D7CA1FF-D4D7-4BA0-B9D7-E4CECB40759A}.Release|x86.ActiveCfg = Release|Win32
 		{6D7CA1FF-D4D7-4BA0-B9D7-E4CECB40759A}.Release|x86.Build.0 = Release|Win32
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Debug|x64.ActiveCfg = Debug|x64
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Debug|x64.Build.0 = Debug|x64
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Debug|x86.ActiveCfg = Debug|Win32
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Debug|x86.Build.0 = Debug|Win32
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Release|x64.ActiveCfg = Release|x64
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Release|x64.Build.0 = Release|x64
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Release|x86.ActiveCfg = Release|Win32
+		{AF2B042C-40A6-4E69-BC54-2A1585080478}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
