@@ -3,12 +3,14 @@
 #include <string>
 
 void UnSet() {
-	std::unordered_set<std::string> coll;
+	std::unordered_multiset<std::string> coll;
 	coll.insert("Hulk");
 	coll.insert("Batman");
 	coll.insert("Green Lantern");
 	coll.insert("The Flash");
 	coll.insert("Wonder Woman");
+	coll.insert("Iron man");
+	coll.insert("Iron man");
 	coll.insert("Iron man");
 	coll.insert("Woverine");
 	coll.insert("Dr. Strange");
