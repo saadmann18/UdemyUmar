@@ -26,10 +26,15 @@ void UnSet() {
 }
 
 void UnMap() {
-	std::unordered_map<std::string, std::string> coll;
-	coll["Batman"] = "Bruce Wayne";
+	std::unordered_multimap<std::string, std::string> coll;
+	/*coll["Batman"] = "Bruce Wayne";
 	coll["Superman"] = "Clark Kent";
-	coll["Hulk"] = "Bruce Banner";
+	coll["Hulk"] = "Bruce Banner";*/
+
+	coll.insert(std::make_pair("Batman", "Bruce Wayne"));
+	coll.insert(std::make_pair("Batman", "Bruce Wayne"));
+	coll.insert(std::make_pair("Superman", "Clark Kent"));
+	coll.insert(std::make_pair("Hulk", "Bruce Banner"));
 
 	for (const auto& x : coll) {
 		std::cout << "Bucket #:" << coll.bucket(x.first) << " -> " << x.first << ":" << x.second << std::endl;
