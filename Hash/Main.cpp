@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unordered_set>
+#include <unordered_map>
 #include <string>
 
 void UnSet() {
@@ -24,12 +25,23 @@ void UnSet() {
 	std::cout << "Load factor: " << coll.load_factor() << std::endl;
 }
 
+void UnMap() {
+	std::unordered_map<std::string, std::string> coll;
+	coll["Batman"] = "Bruce Wayne";
+	coll["Superman"] = "Clark Kent";
+	coll["Hulk"] = "Bruce Banner";
+
+	for (const auto& x : coll) {
+		std::cout << "Bucket #:" << coll.bucket(x.first) << " -> " << x.first << ":" << x.second << std::endl;
+	}
+}
+
 void Hashes() {
 	std::hash<std::string> h;
 	std::cout << "Hash:" << h("Hello") << std::endl;
 }
 
 int main() {
-	UnSet();
+	UnMap();
 	return 0;
 }
