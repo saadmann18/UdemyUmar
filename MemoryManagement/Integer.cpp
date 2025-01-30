@@ -2,39 +2,33 @@
 #include "Integer.h"
 
 //Default constructor
-Integer::Integer()
-{
+Integer::Integer(){
 	std::cout << "Integer()" << std::endl;
 	m_pInt = new int(0);
 }
 //Parametrized constructor
-Integer::Integer(int value)
-{
+Integer::Integer(int value){
 	std::cout << "Integer(int)" << std::endl;
 	m_pInt = new int(value);
 }
 
 //copy constructor for deep copy
-Integer::Integer(const Integer& obj)
-{
+Integer::Integer(const Integer& obj){
 	std::cout << "Integer(const Integer &)" << std::endl;
 	m_pInt = new int(*obj.m_pInt);
 }
 
 //Move constructor for shallow copy
-Integer::Integer(Integer&& obj)
-{
+Integer::Integer(Integer&& obj){
 	std::cout << "Integer(Integer &&)" << std::endl;
 	m_pInt = obj.m_pInt;
 	obj.m_pInt = nullptr;
 }
 
 //copy assignment
-Integer& Integer::operator=(const Integer& obj)
-{
+Integer& Integer::operator=(const Integer& obj){
 	std::cout << "Operator=(const Integer& obj)" << std::endl;
-	if (this == &obj) //checking self assignment of object, i.e., a = a;
-	{
+	if (this == &obj) { //checking self assignment of object, i.e., a = a;
 		return *this; //*this is not a local object and we return that by reference
 	}
 	delete m_pInt;
@@ -43,11 +37,9 @@ Integer& Integer::operator=(const Integer& obj)
 }
 
 //Move assignment
-Integer& Integer::operator=(Integer&& obj)
-{
+Integer& Integer::operator=(Integer&& obj){
 	std::cout << "Operator=(Integer&& obj)" << std::endl;
-	if (this == &obj)
-	{
+	if (this == &obj){
 		return *this; 
 	}
 	delete m_pInt;
@@ -57,25 +49,21 @@ Integer& Integer::operator=(Integer&& obj)
 }
 
 
-int Integer::GetValue() const
-{
+int Integer::GetValue() const{
 	return *m_pInt;
 }
 
-void Integer::SetValue(int value)
-{
+void Integer::SetValue(int value){
 	*m_pInt = value;
 }
 
-Integer Integer::operator+(const Integer& a) const
-{
+Integer Integer::operator+(const Integer& a) const{
 	Integer temp;
 	*temp.m_pInt = *m_pInt + *a.m_pInt;
 	return temp;
 }
 
-Integer& Integer::operator++()
-{
+Integer& Integer::operator++(){
 	++(*m_pInt);
 	return *this;
 } 
@@ -87,50 +75,42 @@ Integer& Integer::operator++()
 	return *this;
 }*/
 
-Integer Integer::operator++(int)
-{
+Integer Integer::operator++(int){
 	Integer temp(*this); //Create a copy using copy constructor
 	++(*m_pInt);
 	return temp; //temp object is a temporary variable, we need to return by value and not by reference.
 }
 
-bool Integer::operator==(const Integer& obj) const
-{
+bool Integer::operator==(const Integer& obj) const{
 	return *m_pInt == *obj.m_pInt;
 }
 
 //function call operator to print contents of the object
-void Integer::operator()() 
-{
+void Integer::operator()() {
 	std::cout << *m_pInt << std::endl;
 }
 
 //Userdefined to primitive type conversion
-Integer::operator int()
-{
+Integer::operator int(){
 	return *m_pInt;
 }
 
-Integer::~Integer()
-{
+Integer::~Integer(){
 	std::cout << "~Integer()" << std::endl;
 	delete m_pInt;
 }
 
-Integer operator +(int x, const Integer& y)
-{
+Integer operator +(int x, const Integer& y){
 	Integer temp;
 	temp.SetValue(x + y.GetValue());
 	return temp;
 }
 
-std::ostream& operator <<(std::ostream& out, const Integer& a)
-{
+std::ostream& operator <<(std::ostream& out, const Integer& a){
 	out << a.GetValue();
 	return out;
 }
-std::istream& operator >>(std::istream& input, Integer& a)
-{
+std::istream& operator >>(std::istream& input, Integer& a){
 	int x;
 	input >> x;
 	*a.m_pInt = x;

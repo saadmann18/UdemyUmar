@@ -72,7 +72,7 @@ void Hashes() {
 	std::unordered_set<Employee, EmployeeHash, EmpEquality> coll;
 	coll.insert(Employee{ "Saad", 123 });
 	coll.insert(Employee{ "Joye", 456 });
-	coll.insert(Employee{ "bob", 678 });
+	coll.insert(Employee{ "bob", 678 }); 
 
 	for (const auto& x : coll) {
 		std::cout << x.GetId() << ':' << x.GetName() << '\n';

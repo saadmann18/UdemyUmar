@@ -6,7 +6,7 @@ public:
 	Point(int x, int y){}
 };
 
-int mainn()
+int main()
 {
 	{
 		//std::unique_ptr<int> p{ new int{5} };
