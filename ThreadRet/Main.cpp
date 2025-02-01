@@ -47,5 +47,4 @@ int main() {
 
 	std::cout << "End of main()\n";
 	threadCompute.join();
-
 }
