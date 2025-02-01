@@ -9,17 +9,17 @@ std::mutex g_Mutex;
 
 void Download() {
 	for (int i = 0; i < SIZE; ++i) {
-		g_Mutex.lock();
+		std::lock_guard<std::mutex> mtx(g_Mutex);
 		g_Data.push_back(i);
-		g_Mutex.unlock();
+		if (i == 500)
+			return;
 	}
 }
 
 void Download2() {
 	for (int i = 0; i < SIZE; ++i) {
-		g_Mutex.lock();
+		std::lock_guard<std::mutex> mtx(g_Mutex);
 		g_Data.push_back(i);
-		g_Mutex.unlock();
 	}
 }
 
