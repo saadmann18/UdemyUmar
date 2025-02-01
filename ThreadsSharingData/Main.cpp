@@ -9,7 +9,7 @@ std::mutex g_Mutex;
 
 void Download() {
 	for (int i = 0; i < SIZE; ++i) {
-		std::lock_guard<std::mutex> mtx(g_Mutex);
+		std::lock_guard<std::mutex> mtx(g_Mutex); // uses RAII, so object gets destroyed and calls unlock automaitcally.
 		g_Data.push_back(i);
 		if (i == 500)
 			return;
