@@ -26,7 +26,7 @@ public:
 	}
 };
 
-void Download(String &file) {
+void Download(const String &file) {
 	//std::cout << "Started downloading: " << file << std::endl;
 	for (int i = 0; i < SIZE; ++i) {
 		g_Data.push_back(i);
@@ -36,7 +36,7 @@ void Download(String &file) {
 int main() {
 	String file;
 	std::cout << "[main] started" << std::endl;
-	std::thread thDownloader(Download, std::ref(file));
+	std::thread thDownloader(Download, std::cref(file));
 	//thDownloader.detach();
 	std::cout << "[main] continued operation" << std::endl;
 	if (thDownloader.joinable()) {
