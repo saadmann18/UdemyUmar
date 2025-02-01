@@ -19,7 +19,7 @@ Integer::Integer(const Integer& obj){
 }
 
 //Move constructor for shallow copy
-Integer::Integer(Integer&& obj){
+Integer::Integer(Integer&& obj)noexcept{
 	std::cout << "Integer(Integer &&)" << std::endl;
 	m_pInt = obj.m_pInt;
 	obj.m_pInt = nullptr;
@@ -37,7 +37,7 @@ Integer& Integer::operator=(const Integer& obj){
 }
 
 //Move assignment
-Integer& Integer::operator=(Integer&& obj){
+Integer& Integer::operator=(Integer&& obj)noexcept{
 	std::cout << "Operator=(Integer&& obj)" << std::endl;
 	if (this == &obj){
 		return *this; 
