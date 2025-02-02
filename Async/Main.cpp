@@ -11,7 +11,7 @@ void Downloader() {
 }
 
 int main() {
-	std::future<void> result = std::async(Downloader);
+	std::future<void> result = std::async(Downloader); //async returns future object, without object, it will run synchronously.
 	std::cout << "Main() threading continues execution...\n";
 	result.get();
 }
